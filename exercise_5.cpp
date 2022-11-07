@@ -174,18 +174,5 @@ int main() {
     std::cout.flush();
     std::cout << "Monte-Carlo CPU TIME: " << (int)time/60 << " min " << (int)((time/60-(int)(time/60))*60) << " sec" << " at " << current_time() << "      \n";
 
-    std::string radius = std::to_string(sigma/2);
-    std::string lenght_x = std::to_string(L_x);
-    std::string lenght_y = std::to_string(L_y);
-    std::string A = std::to_string(g/T);
-    std::string str_N = std::to_string(N);
-    std::string str1 = "gnuplot -e Lx=" + lenght_x + " -e Ly=" + lenght_y + " -e r=" + radius +  " -e A=" + A +  " -e N=" + str_N + " visual.gnu";
-    std::cout << "CREATING GIF" << '\n';
-    system(str1.c_str());
-    system("open -a 'Google Chrome' d-e.gif");
-
     return 0;
 }
-
-// gnuplot -e Lx=30 -e Ly=150 -e r=0.5 visual.gnu
-// gnuplot -e Lx=15 -e Ly=150 -e r=0.5 -e A=0.3 -e N=300 visual.gnu
